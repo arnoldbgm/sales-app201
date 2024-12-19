@@ -15,6 +15,7 @@ function Product(name, price, stock) {
 Product.prototype.updateStock = function (quantity) {
    // Actualiza el stock y valida que no sea negativo
    const newStock = this.stock + quantity;
+
    if (newStock < 0) {
       throw new Error("Stock insuficiente")
    }
@@ -38,8 +39,8 @@ Product.prototype.renderUI = function () {
    li.innerHTML = `
    <span>${ this.getProductInfo()}</span> 
    <div class="btn-group">
-    <button>+</button>
-    <button>-</button>
+    <button class="btn btn-sm btn-success">+</button>
+    <button class="btn btn-sm btn-danger">-</button>
    </div>
    `;
    return li;
