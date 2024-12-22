@@ -32,6 +32,10 @@ Product.prototype.getProductInfo = function () {
    return `${this.name} - ${this.getFormattedPrice()} (Stock: ${this.stock})`
 };
 
+Product.prototype.hasStock = function(quantity) {
+   return this.stock >= quantity;
+}
+
 Product.prototype.renderUI = function () {
    // retornar un elemento HTML `li` con la información del producto
    const li = document.createElement("li")

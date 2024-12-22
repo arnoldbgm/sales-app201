@@ -26,18 +26,18 @@ Customer.prototype.renderUI = function () {
    const li = document.createElement("li")
    li.className = "list-group-item";
    li.innerHTML = `
-   <div class="accordion">
+  <div class="accordion">
      <div class="d-flex justify-content-between align-items-center">
        <div>
-     <h6>${this.name}</h6>
-     <small>${this.email}</small>
-     </div>
-      <div>
-          <form onsubmit="actualizarCorreo()">
-              <input type="email" class="form-control form-control-sm"
-                 value="${this.email}">
-            <button class="btn btn-primary">Actualizar</button>
-          </form>
+         <h6>${this.name}</h6>
+         <small>${this.email}</small>
+       </div>
+       <div>
+         <form onsubmit="actualizarCorreo(event, ${this.id})">
+             <input type="email" class="form-control form-control-sm"
+                value="${this.email}">
+           <button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+         </form>
        </div>
      </div>
    </div>
